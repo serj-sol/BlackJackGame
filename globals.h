@@ -1,0 +1,7 @@
+#ifndef GLOBALS_H
+#define GLOBALS_H
+
+enum rank { ACE = 1, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING };
+enum suit { CLUBS, DIAMONDS, HEARTS, SPADES };
+
+#endif // GLOBALS_H
