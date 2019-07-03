@@ -1,7 +1,5 @@
 #include "card.h"
 #include "globals.h"
-#include <cstring>
-
 
 void Card::flip()
 {

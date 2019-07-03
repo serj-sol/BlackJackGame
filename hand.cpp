@@ -1,8 +1,9 @@
 #include "hand.h"
-#include <vector>
 
 void Hand::add(Card* pCard)
 {
+    if(!(pCard->getValue()))    // <--Добавил условие и переворот карты, если она рубашкой вверх,
+        pCard->flip();          //<-- иначе карты остаются перевернутыми.
     m_Cards.push_back(pCard);
 }
 

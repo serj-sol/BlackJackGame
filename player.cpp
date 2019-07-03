@@ -1,10 +1,5 @@
 #include "player.h"
 
-//Player::Player()
-//{
-
-//}
-
 bool Player::isHitting() const
 {
     std::cout << m_Name << ", do you want a hit? (Y/N)";

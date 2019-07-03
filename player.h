@@ -8,9 +8,8 @@
 
 #ifndef PLAYER_H
 #define PLAYER_H
-#include <cstring>
-#include "genericplayer.h"
 
+#include "genericplayer.h"
 
 class Player: public GenericPlayer
 {

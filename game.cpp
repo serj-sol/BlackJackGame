@@ -17,9 +17,10 @@ Game::Game(const std::vector<std::string>& names)
     m_Deck.shuffle();
 }
 
-
 void Game::play()
 {
+    // Раздаем всем по две карты.
+
     std::vector<Player>::iterator pPlayer;
     for(int i = 0; i < 2; ++i)
     {
@@ -32,12 +33,13 @@ void Game::play()
 
     // Прячем превую карту дилера.
 
-    m_House.flipFirstCard();
+    m_House.flipSecondCard();
 
     // Открывем руки всех игроков.
 
     for(pPlayer = m_Players.begin(); pPlayer != m_Players.end(); ++pPlayer)
     {
+
         std::cout << *pPlayer << std::endl;
     }
 
@@ -52,7 +54,7 @@ void Game::play()
 
     // Показваем первую карты дилера.
 
-    m_House.flipFirstCard();
+    m_House.flipSecondCard();
     std::cout << std::endl << m_House;
 
     // Раздаем дилеру дополнительные карты.

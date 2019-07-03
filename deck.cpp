@@ -1,11 +1,9 @@
 #include "deck.h"
 #include <algorithm>
-#include "globals.h"
 
 void Deck::populate()
 {
     clear();
-
     for(int s  = suit::CLUBS; s <= suit::SPADES; ++s)
     {
         for(int r = rank::ACE; r <= rank::KING; ++r)

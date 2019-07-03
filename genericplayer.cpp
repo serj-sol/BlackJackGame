@@ -1,5 +1,4 @@
 #include "genericplayer.h"
-#include <vector>
 
 bool GenericPlayer::isBoosted() const
 {
@@ -18,7 +17,9 @@ std::ostream& operator << (std::ostream& os, GenericPlayer& aGenericPlayer)
     if(!aGenericPlayer.m_Cards.empty())
     {
         for(pCard = aGenericPlayer.m_Cards.begin(); pCard != aGenericPlayer.m_Cards.end(); ++pCard)
+        {
             os << *(*pCard) << '\t';
+        }
     }
 
     if(aGenericPlayer.getTotal() != 0)

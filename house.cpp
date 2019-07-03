@@ -5,11 +5,11 @@ bool House::isHitting() const
     return (getTotal() <= 16);
 }
 
-void House::flipFirstCard()
+void House::flipSecondCard()
 {
     if(!m_Cards.empty())
     {
-        m_Cards[0]->flip();
+        m_Cards[1]->flip();
     }
     else
     {

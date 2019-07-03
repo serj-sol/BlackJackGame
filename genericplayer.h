@@ -11,7 +11,6 @@
 #define GENERICPLAYER_H
 #include "hand.h"
 
-
 class GenericPlayer : public Hand
 {
 protected:
@@ -19,6 +18,7 @@ protected:
 public:
     GenericPlayer(const std::string& name = "") : m_Name(name) {}
     ~GenericPlayer() {}
+
     virtual bool    isHitting() const = 0;
     bool            isBoosted() const;
     void            bust() const;

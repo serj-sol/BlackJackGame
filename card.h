@@ -19,13 +19,13 @@
 
 class Card
 {
-private:
+protected:
     rank m_Rank;
     suit m_Suit;
     bool m_IsFaceUp;
 
 public:
-    Card(rank r, suit s, bool isf = 0 ): m_Rank(r), m_Suit(s), m_IsFaceUp(isf) {}
+    Card(rank r, suit s, bool isf = true ): m_Rank(r), m_Suit(s), m_IsFaceUp(isf) {}
     ~Card() {}
     int     getValue() const;
     void    flip();

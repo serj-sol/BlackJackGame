@@ -8,18 +8,11 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <cstdlib>
 #include <vector>
 
-#include "hand.h"
 #include "house.h"
 #include "player.h"
 #include "deck.h"
-#include "genericplayer.h"
-#include "card.h"
-#include "globals.h"
-
-
 
 class Game
 {
@@ -27,12 +20,9 @@ protected:
     Deck                m_Deck;
     House               m_House;
     std::vector<Player> m_Players;
-
 public:
     Game(const std::vector<std::string>& names);
-
     ~Game() {}
-
     void play();
 };
 

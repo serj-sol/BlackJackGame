@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <limits>
+#include <cstdlib>
 
 #include "player.h"
 #include "game.h"
@@ -21,13 +23,15 @@ int main (int argc, char* argv[])
     {
         std::cout << "How many players? (1 - 7): ";
         std::cin >> numPlayers;
+        std::cin.clear();   // Очистка ошибок и потока на случай ввода не цифр.
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
     }
+
     std::vector<std::string> names;
 
     std::string name;
 
     for(int i = 0; i < numPlayers; ++i)
-
     {
         std::cout << "Enter player name: ";
         std::cin >> name;
@@ -35,7 +39,8 @@ int main (int argc, char* argv[])
     }
     std::cout << std::endl;
 
-    // игровой цикл
+    // Игровой цикл.
+
     Game aGame (names);
     char again = 'y';
     while (again != 'n' && again != 'N')
@@ -43,6 +48,7 @@ int main (int argc, char* argv[])
         aGame.play();
         std::cout << "\nDo you want to play again? (Y/N): ";
         std::cin >> again;
+        system("clear");
     }
     return 0;
 }
