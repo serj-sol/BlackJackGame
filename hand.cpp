@@ -43,3 +43,8 @@ void Hand::clear()
     }
     m_Cards.clear();
 }
+
+int Hand::cardBalance() const
+{
+    return m_Cards.size();
+}

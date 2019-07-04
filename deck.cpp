@@ -1,9 +1,15 @@
 #include "deck.h"
 #include <algorithm>
 
-void Deck::populate()
+Deck::Deck ()
 {
     clear();
+    m_Cards.reserve(52);
+    populate();
+    shuffle();
+}
+void Deck::populate()
+{
     for(int s  = suit::CLUBS; s <= suit::SPADES; ++s)
     {
         for(int r = rank::ACE; r <= rank::KING; ++r)
@@ -11,6 +17,7 @@ void Deck::populate()
             add(new Card(static_cast <rank> (r), static_cast<suit> (s)));
         }
     }
+    std::cout << "Теперь в колоде: " << m_Cards.size() << " карт.\n";
 }
 
 void Deck::shuffle()
@@ -36,6 +43,13 @@ void Deck::additionalCards(GenericPlayer& aGenericPlayer)
     std::cout << std::endl;
     while (!(aGenericPlayer.isBoosted()) && aGenericPlayer.isHitting())
     {
+        if(m_Cards.size() < 20)
+        {
+            std::cout << "Карт в колоде: " << m_Cards.size() << ". Добавляем новую колоду\n";
+            this->populate();
+            this->shuffle();
+
+        }
         deal (aGenericPlayer);
         std::cout << aGenericPlayer << std::endl;
 

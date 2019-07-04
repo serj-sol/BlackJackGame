@@ -30,6 +30,7 @@ public:
     void    add(Card* pCard);
     void    clear();
     int     getTotal() const;
+    int     cardBalance() const;
 
 };
 

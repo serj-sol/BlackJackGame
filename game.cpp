@@ -13,8 +13,6 @@ Game::Game(const std::vector<std::string>& names)
     }
 
     srand(static_cast<unsigned int> (time(0)));
-    m_Deck.populate();
-    m_Deck.shuffle();
 }
 
 void Game::play()

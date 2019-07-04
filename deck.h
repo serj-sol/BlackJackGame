@@ -17,11 +17,7 @@ class Deck : public Hand
 {
 private:
 public:
-    Deck()
-    {
-        m_Cards.reserve(52);
-        populate();
-    }
+    Deck();
     ~Deck() {}
 
     void populate();
